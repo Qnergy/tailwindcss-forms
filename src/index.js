@@ -10,106 +10,106 @@ const forms = plugin.withOptions(function (options = { strategy: 'base' }) {
     const strategy = options.strategy
 
     const rules = [
-      {
-        base: [
-          "[type='text']",
-          "[type='email']",
-          "[type='url']",
-          "[type='password']",
-          "[type='number']",
-          "[type='date']",
-          "[type='datetime-local']",
-          "[type='month']",
-          "[type='search']",
-          "[type='tel']",
-          "[type='time']",
-          "[type='week']",
-          '[multiple]',
-          'textarea',
-          'select',
-        ],
-        class: ['.form-input', '.form-textarea', '.form-select', '.form-multiselect'],
-        styles: {
-          appearance: 'none',
-          'background-color': '#fff',
-          'border-color': theme('colors.gray.500', colors.gray[500]),
-          'border-width': borderWidth['DEFAULT'],
-          'border-radius': borderRadius.none,
-          'padding-top': spacing[2],
-          'padding-right': spacing[3],
-          'padding-bottom': spacing[2],
-          'padding-left': spacing[3],
-          'font-size': baseFontSize,
-          'line-height': baseLineHeight,
-          '--tw-shadow': '0 0 #0000',
-          '&:focus': {
-            outline: '2px solid transparent',
-            'outline-offset': '2px',
-            '--tw-ring-inset': 'var(--tw-empty,/*!*/ /*!*/)',
-            '--tw-ring-offset-width': '0px',
-            '--tw-ring-offset-color': '#fff',
-            '--tw-ring-color': theme('colors.blue.600', colors.blue[600]),
-            '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
-            '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
-            'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)`,
-            'border-color': theme('colors.blue.600', colors.blue[600]),
-          },
-        },
-      },
-      {
-        base: ['input::placeholder', 'textarea::placeholder'],
-        class: ['.form-input::placeholder', '.form-textarea::placeholder'],
-        styles: {
-          color: theme('colors.gray.500', colors.gray[500]),
-          opacity: '1',
-        },
-      },
-      {
-        base: ['::-webkit-datetime-edit-fields-wrapper'],
-        class: ['.form-input::-webkit-datetime-edit-fields-wrapper'],
-        styles: {
-          padding: '0',
-        },
-      },
-      {
-        // Unfortunate hack until https://bugs.webkit.org/show_bug.cgi?id=198959 is fixed.
-        // This sucks because users can't change line-height with a utility on date inputs now.
-        // Reference: https://github.com/twbs/bootstrap/pull/31993
-        base: ['::-webkit-date-and-time-value'],
-        class: ['.form-input::-webkit-date-and-time-value'],
-        styles: {
-          'min-height': '1.5em',
-        },
-      },
-      {
-        base: ['select'],
-        class: ['.form-select'],
-        styles: {
-          'background-image': `url("${svgToDataUri(
-            `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="${theme(
-              'colors.gray.500',
-              colors.gray[500]
-            )}" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>`
-          )}")`,
-          'background-position': `right ${spacing[2]} center`,
-          'background-repeat': `no-repeat`,
-          'background-size': `1.5em 1.5em`,
-          'padding-right': spacing[10],
-          'color-adjust': `exact`,
-        },
-      },
-      {
-        base: ['[multiple]'],
-        class: null,
-        styles: {
-          'background-image': 'initial',
-          'background-position': 'initial',
-          'background-repeat': 'unset',
-          'background-size': 'initial',
-          'padding-right': spacing[3],
-          'color-adjust': 'unset',
-        },
-      },
+      // {
+      //   base: [
+      //     "[type='text']",
+      //     "[type='email']",
+      //     "[type='url']",
+      //     "[type='password']",
+      //     "[type='number']",
+      //     "[type='date']",
+      //     "[type='datetime-local']",
+      //     "[type='month']",
+      //     "[type='search']",
+      //     "[type='tel']",
+      //     "[type='time']",
+      //     "[type='week']",
+      //     '[multiple]',
+      //     'textarea',
+      //     'select',
+      //   ],
+      //   class: ['.form-input', '.form-textarea', '.form-select', '.form-multiselect'],
+      //   styles: {
+      //     appearance: 'none',
+      //     'background-color': '#fff',
+      //     'border-color': theme('colors.gray.500', colors.gray[500]),
+      //     'border-width': borderWidth['DEFAULT'],
+      //     'border-radius': borderRadius.none,
+      //     'padding-top': spacing[2],
+      //     'padding-right': spacing[3],
+      //     'padding-bottom': spacing[2],
+      //     'padding-left': spacing[3],
+      //     'font-size': baseFontSize,
+      //     'line-height': baseLineHeight,
+      //     '--tw-shadow': '0 0 #0000',
+      //     '&:focus': {
+      //       outline: '2px solid transparent',
+      //       'outline-offset': '2px',
+      //       '--tw-ring-inset': 'var(--tw-empty,/*!*/ /*!*/)',
+      //       '--tw-ring-offset-width': '0px',
+      //       '--tw-ring-offset-color': '#fff',
+      //       '--tw-ring-color': theme('colors.blue.800', colors.blue[800]),
+      //       '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
+      //       '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
+      //       'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)`,
+      //       'border-color': theme('colors.blue.800', colors.blue[800]),
+      //     },
+      //   },
+      // },
+      // {
+      //   base: ['input::placeholder', 'textarea::placeholder'],
+      //   class: ['.form-input::placeholder', '.form-textarea::placeholder'],
+      //   styles: {
+      //     color: theme('colors.gray.500', colors.gray[500]),
+      //     opacity: '1',
+      //   },
+      // },
+      // {
+      //   base: ['::-webkit-datetime-edit-fields-wrapper'],
+      //   class: ['.form-input::-webkit-datetime-edit-fields-wrapper'],
+      //   styles: {
+      //     padding: '0',
+      //   },
+      // },
+      // {
+      //   // Unfortunate hack until https://bugs.webkit.org/show_bug.cgi?id=198959 is fixed.
+      //   // This sucks because users can't change line-height with a utility on date inputs now.
+      //   // Reference: https://github.com/twbs/bootstrap/pull/31993
+      //   base: ['::-webkit-date-and-time-value'],
+      //   class: ['.form-input::-webkit-date-and-time-value'],
+      //   styles: {
+      //     'min-height': '1.5em',
+      //   },
+      // },
+      // {
+      //   base: ['select'],
+      //   class: ['.form-select'],
+      //   styles: {
+      //     'background-image': `url("${svgToDataUri(
+      //       `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="${theme(
+      //         'colors.gray.500',
+      //         colors.gray[500]
+      //       )}" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>`
+      //     )}")`,
+      //     'background-position': `right ${spacing[2]} center`,
+      //     'background-repeat': `no-repeat`,
+      //     'background-size': `1.5em 1.5em`,
+      //     'padding-right': spacing[10],
+      //     'color-adjust': `exact`,
+      //   },
+      // },
+      // {
+      //   base: ['[multiple]'],
+      //   class: null,
+      //   styles: {
+      //     'background-image': 'initial',
+      //     'background-position': 'initial',
+      //     'background-repeat': 'unset',
+      //     'background-size': 'initial',
+      //     'padding-right': spacing[3],
+      //     'color-adjust': 'unset',
+      //   },
+      // },
       {
         base: [`[type='checkbox']`, `[type='radio']`],
         class: ['.form-checkbox', '.form-radio'],
@@ -124,7 +124,7 @@ const forms = plugin.withOptions(function (options = { strategy: 'base' }) {
           'flex-shrink': '0',
           height: spacing[4],
           width: spacing[4],
-          color: theme('colors.blue.600', colors.blue[600]),
+          color: theme('colors.blue.800', colors.blue[800]),
           'background-color': '#fff',
           'border-color': theme('colors.gray.500', colors.gray[500]),
           'border-width': borderWidth['DEFAULT'],
@@ -145,21 +145,21 @@ const forms = plugin.withOptions(function (options = { strategy: 'base' }) {
           'border-radius': '100%',
         },
       },
-      {
-        base: [`[type='checkbox']:focus`, `[type='radio']:focus`],
-        class: ['.form-checkbox:focus', '.form-radio:focus'],
-        styles: {
-          outline: '2px solid transparent',
-          'outline-offset': '2px',
-          '--tw-ring-inset': 'var(--tw-empty,/*!*/ /*!*/)',
-          '--tw-ring-offset-width': '2px',
-          '--tw-ring-offset-color': '#fff',
-          '--tw-ring-color': theme('colors.blue.600', colors.blue[600]),
-          '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
-          '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
-          'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)`,
-        },
-      },
+      // {
+      //   base: [`[type='checkbox']:focus`, `[type='radio']:focus`],
+      //   class: ['.form-checkbox:focus', '.form-radio:focus'],
+      //   styles: {
+      //     outline: '2px solid transparent',
+      //     'outline-offset': '2px',
+      //     '--tw-ring-inset': 'var(--tw-empty,/*!*/ /*!*/)',
+      //     '--tw-ring-offset-width': '2px',
+      //     '--tw-ring-offset-color': '#fff',
+      //     '--tw-ring-color': theme('colors.blue.800', colors.blue[800]),
+      //     '--tw-ring-offset-shadow': `var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)`,
+      //     '--tw-ring-shadow': `var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)`,
+      //     'box-shadow': `var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)`,
+      //   },
+      // },
       {
         base: [`[type='checkbox']:checked`, `[type='radio']:checked`],
         class: ['.form-checkbox:checked', '.form-radio:checked'],
@@ -207,49 +207,49 @@ const forms = plugin.withOptions(function (options = { strategy: 'base' }) {
           'background-color': 'currentColor',
         },
       },
-      {
-        base: [`[type='checkbox']:indeterminate`],
-        class: ['.form-checkbox:indeterminate'],
-        styles: {
-          'background-image': `url("${svgToDataUri(
-            `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h8"/></svg>`
-          )}")`,
-          'border-color': `transparent`,
-          'background-color': `currentColor`,
-          'background-size': `100% 100%`,
-          'background-position': `center`,
-          'background-repeat': `no-repeat`,
-        },
-      },
-      {
-        base: [`[type='checkbox']:indeterminate:hover`, `[type='checkbox']:indeterminate:focus`],
-        class: ['.form-checkbox:indeterminate:hover', '.form-checkbox:indeterminate:focus'],
-        styles: {
-          'border-color': 'transparent',
-          'background-color': 'currentColor',
-        },
-      },
-      {
-        base: [`[type='file']`],
-        class: null,
-        styles: {
-          background: 'unset',
-          'border-color': 'inherit',
-          'border-width': '0',
-          'border-radius': '0',
-          padding: '0',
-          'font-size': 'unset',
-          'line-height': 'inherit',
-        },
-      },
-      {
-        base: [`[type='file']:focus`],
-        class: null,
-        styles: {
-          outline: `1px solid ButtonText`,
-          outline: `1px auto -webkit-focus-ring-color`,
-        },
-      },
+      // {
+      //   base: [`[type='checkbox']:indeterminate`],
+      //   class: ['.form-checkbox:indeterminate'],
+      //   styles: {
+      //     'background-image': `url("${svgToDataUri(
+      //       `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h8"/></svg>`
+      //     )}")`,
+      //     'border-color': `transparent`,
+      //     'background-color': `currentColor`,
+      //     'background-size': `100% 100%`,
+      //     'background-position': `center`,
+      //     'background-repeat': `no-repeat`,
+      //   },
+      // },
+      // {
+      //   base: [`[type='checkbox']:indeterminate:hover`, `[type='checkbox']:indeterminate:focus`],
+      //   class: ['.form-checkbox:indeterminate:hover', '.form-checkbox:indeterminate:focus'],
+      //   styles: {
+      //     'border-color': 'transparent',
+      //     'background-color': 'currentColor',
+      //   },
+      // },
+      // {
+      //   base: [`[type='file']`],
+      //   class: null,
+      //   styles: {
+      //     background: 'unset',
+      //     'border-color': 'inherit',
+      //     'border-width': '0',
+      //     'border-radius': '0',
+      //     padding: '0',
+      //     'font-size': 'unset',
+      //     'line-height': 'inherit',
+      //   },
+      // },
+      // {
+      //   base: [`[type='file']:focus`],
+      //   class: null,
+      //   styles: {
+      //     outline: `1px solid ButtonText`,
+      //     outline: `1px auto -webkit-focus-ring-color`,
+      //   },
+      // },
     ]
 
     addBase(
